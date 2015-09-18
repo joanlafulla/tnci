@@ -1,0 +1,52 @@
+.main-features {
+	padding: 0 1.2rem;
+	width: 100%;
+	background-color: $grey;
+	margin: 0;
+	@include clearfix;
+
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+
+				li {
+					@include span(3 of 12);
+					text-align: center;
+
+						&:last-child {
+							@include span(3 of 12 last);
+						}
+
+						div {
+							padding: 4rem 1.5rem;
+							width: 80%;
+							text-align: center;
+							margin: 0 auto;
+
+								h2 {
+									font-weight: 300;
+								}
+						}
+				}
+		}
+
+	&_wrapper {
+		@include container();
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.main-features  ul li {
+			@include span(6 of 12);
+
+				&:nth-child(2n+2) {
+					@include span(6 of 12);
+					float: right;
+					margin-right: 0;
+					background-color: pink;
+				}
+
+				
+		}
+	}

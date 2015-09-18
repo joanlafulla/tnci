@@ -1,0 +1,27 @@
+.hero {
+	background-image: url("../img/hero/bg_01.jpg");
+	background-repeat:no-repeat;
+	background-position: 50% center;
+	background-size: cover;
+	max-width: 100%;
+	transition: all 0.5s ease 0s;
+	position: relative;
+
+	&_claim {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+
+			h1 {
+				@include font-size($herobig);
+				font-weight: 700;
+				color: #ffffff;
+				text-shadow: 4px 4px 4px rgba(0,0,0,.6);
+				line-height: 1em;
+				padding: 0 1.2rem;
+				margin: 1rem 0;
+			}
+	}
+}

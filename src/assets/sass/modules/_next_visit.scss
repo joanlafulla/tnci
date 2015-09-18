@@ -1,0 +1,67 @@
+.next-visit {
+	@include container(full);
+	background-image: url("../img/nextvisit_bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+	display: block;
+
+
+		&_wrapper {
+			@include container(1200px);
+			padding: 8rem 1rem;
+			color: #ffffff;
+			font-weight: 300;
+
+				h2 {
+					@include font-size($xxxbig);
+
+						span {
+							font-weight: 700;
+						}
+				}
+		}
+
+		&_wrapper-items {
+			@include font-size($xbig);
+			width: 100%;
+			@include clearfix;
+		}
+
+		&_content {
+			@include span(6 of 12);
+
+			svg {
+					fill: #ffffff;
+					width: 125px;
+					height: 25px;
+				}
+		}
+
+		&_hero {
+			@include span(6 of 12 last);
+				ul {
+					list-style-type: none;
+					@include clearfix;
+					margin: 0;
+					padding: 0;
+
+					li {
+						float: left;
+						margin-right: 0.75rem;
+
+							&:last-child {
+								margin-right: 0;
+							}
+					}
+				}
+
+				img {
+					width: 100%;
+					height: auto;
+					display: block;
+				}
+		}
+
+}

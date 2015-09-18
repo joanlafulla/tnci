@@ -1,0 +1,28 @@
+@mixin button ($color, $background-color, $background-color--hover, $padding) {
+  @include font-size(20);
+  color: $color;
+  padding: $padding;
+  background-color: $background-color;
+  text-decoration: none;
+  margin: 1rem 0;
+  display: inline-block;
+  text-transform: uppercase;
+
+    &:hover {
+      text-decoration: none;
+      background-color: lighten($background-color--hover, 4%);
+    }
+}
+
+.button_accent {
+  @include button (#ffffff, $blue, $blue, 1.2rem); 
+}
+
+.button_primary {
+  @include button (#ffffff, $blue, $blue, 1rem); 
+}
+
+.button_secondary {
+  @include button ($blue, #ffffff, #ffffff, 1rem);
+  border: 1px solid $blue;
+}

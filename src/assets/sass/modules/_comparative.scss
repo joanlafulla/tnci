@@ -1,0 +1,71 @@
+.comparative {
+	@include container(1200px);
+	padding: 4rem 1rem;
+
+	h2 {
+			text-align: center;
+		}
+
+	table {
+		border-collapse: collapse;
+    	border-spacing: 0;
+    	width: 100%;
+    	margin-top: 5rem;
+
+    		th {
+    			border-left: 2rem solid #ffffff;
+    		}
+
+
+    		td {
+    			padding: 1.2rem;
+    			font-weight: 300;
+    			text-align: center;
+    			
+
+    				&:first-child {
+    					text-align: right;
+    				}
+    		}
+
+    		tbody tr:nth-child(2n+1) {
+    			background-color: $grey;
+    		}
+	}
+
+	&-plus-header,
+	&-multi-header {
+		@include font-size($big);
+		font-weight: 300;
+		padding: .5rem 0;
+
+			span {
+				@include font-size($xxxbig);
+				display: block;
+				padding: 1rem 0;
+			}
+	}
+
+	&-plus-header {
+		background-color: $orange;
+		color: #ffffff;
+	}
+
+	&-multi-header {
+		background-color: $grey;
+	}
+
+	&-check {
+		width: 32px;
+		height: 32px;
+		vertical-align: middle;
+		fill: #ffcc00;
+	}
+
+	&-none:before {
+		content: "\0005F";
+		font-size: 32px;
+	}
+
+}
+

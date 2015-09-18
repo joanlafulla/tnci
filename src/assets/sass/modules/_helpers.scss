@@ -1,0 +1,48 @@
+//Layout
+$susy: (
+	columns: 12,
+  	gutters: 0.75
+	);
+
+//Text Sizes
+
+$doc-font-size: 18;
+
+$big: 20;
+$xbig: 24;
+$xxbig: 32;
+$xxxbig: 40;
+
+$small: 16;
+$xsmall: 14;
+$xxsmall: 10;
+
+$hero: 80;
+$herobig: 80;
+
+//Colors
+
+$base: #333333;
+$blue: #3498db;
+$grey: #f5f5f5;
+$orange: #ff9900;
+
+
+@mixin font-size($size) {
+  font-size: 0px + $size;
+  font-size: 0rem + $size / $doc-font-size;
+}
+
+@mixin clearfix() {
+    & {
+        *zoom: 1;
+    }
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}

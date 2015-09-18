@@ -1,0 +1,56 @@
+.web-portals {
+	@include container(full);
+	background-image: 
+	linear-gradient(
+      rgba(64,149,235,0.7), 
+      rgba(64,149,235,0.7)
+    ), url("../img/portals_bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	position: relative;
+	display: block;
+
+	&_wrapper {
+		@include container(1200px);
+		padding: 8rem 1rem;
+		z-index: 1;
+	}
+
+	&_logos {
+		list-style-type: none;
+		overflow: hidden;
+		margin: 0;
+		padding: 0 1rem;
+		color: #ffffff;
+			li {
+				float: left;
+				margin-right: 24px;
+					
+					svg {
+						fill: #ffffff;
+						width: 125px;
+						height: 25px;
+					}
+			}
+
+			li:last-child {
+				margin-right: 0;
+			}
+	}
+
+	&_claim h2 {
+		margin: 0;
+		clear: both;
+		padding: 1.2rem 1rem;
+		@include font-size($xxxbig);
+		line-height: 130%;
+		font-weight: 300;
+		color: #ffffff;
+
+			span {
+				font-weight: 700;
+			}
+	}
+}

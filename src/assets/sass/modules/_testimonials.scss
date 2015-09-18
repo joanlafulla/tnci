@@ -1,0 +1,88 @@
+#testimony {
+	background: #ffffff;
+}
+
+.testimony {
+	@include container(1200px);
+	padding: 4rem 1rem;
+	z-index: 1;
+
+		h2 {
+			text-align: center;
+		}
+
+	&_wrapper {
+		@include clearfix;
+		margin-top: 1rem;
+		position: relative;
+	}
+
+	&_item {
+		@include span(4 of 12);
+		margin-bottom: 3rem;
+		padding-top: 32px;
+		opacity: 0;
+		-moz-transition: all 700ms linear 400ms;
+	  	-webkit-transition: all 700ms linear 400ms;
+	  	-o-transition: all 700ms linear 400ms;
+	  	transition: all 700ms linear 400ms;
+	  	-moz-transform: translate3d(0px, 80px, 0px);
+	  	-webkit-transform: translate3d(0px, 80px, 0px);
+	  	-o-transform: translate(0px, 80px);
+	  	-ms-transform: translate(0px, 80px);
+	  	transform: translate3d(0px, 80px, 0px);
+
+			&:nth-child(3n+3) {
+				@include span(4 of 12 last);
+			}
+
+			&:before {
+				content: "\201C";
+				position: absolute;
+				@include font-size(60);
+				color: #999999;
+				font-weight: 700;
+			}
+	}
+
+	&_item.in-view {
+		opacity: 1;
+	  	-moz-transform: translate3d(0px, 0px, 0px);
+	  	-webkit-transform: translate3d(0px, 0px, 0px);
+	  	-o-transform: translate(0px, 0px);
+	  	-ms-transform: translate(0px, 0px);
+	  	transform: translate3d(0px, 0px, 0px);
+	}
+
+	blockquote {
+		margin: 24px 0 0;
+
+			span {
+				font-style: italic; 
+			}	
+	}
+
+	&_source {
+		margin-top: 0.75rem;
+		overflow: hidden;
+
+			img {
+				width: 80px;
+				height: auto;
+				border-radius: 50%;
+				float: left;
+				margin-right: 0.75rem;
+			}
+
+			cite {
+				font-style: normal;
+				vertical-align: middle;
+
+					span {
+						font-weight: 700;
+						font-style: normal;
+					}
+			}
+	}
+
+}
