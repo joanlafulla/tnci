@@ -25,3 +25,47 @@
 			}
 	}
 }
+
+@media screen and (max-width: 600px) {
+	.hero{
+		&_claim {
+				h1 {
+					@include font-size($heromedium);
+				}
+		}
+	}
+}
+
+
+@media screen and (max-width: 480px) {
+	.hero{
+		&_claim {
+				h1 {
+					@include font-size($herosmallc);
+				}
+		}
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.hero{
+		&_claim {
+				h1 {
+					@include font-size($herosmallc);
+					text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+				}
+		}
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.hero{
+		&_claim {
+				h1 {
+					@include font-size($herosmallb);
+					text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+				}
+				top: 63%;
+		}
+	}
+}

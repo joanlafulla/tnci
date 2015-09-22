@@ -26,3 +26,27 @@
   @include button ($blue, #ffffff, #ffffff, 1rem);
   border: 1px solid $blue;
 }
+
+@media screen and (max-width: 896px) {
+  .button_secondary {
+    @include font-size($small);
+    padding: 0.65rem 1rem 1rem 1rem;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .button_secondary {
+    @include font-size($xxsmall);
+    padding: 0.15rem 0.35rem 0.15rem 0.35rem;
+  }
+
+  .header_login.button_secondary {
+    height: 32px;
+  }
+
+  .button_accent {
+    @include font-size($xsmall);
+    padding: 0.6rem;
+  }
+}

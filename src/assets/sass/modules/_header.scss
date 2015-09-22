@@ -33,8 +33,13 @@
 
 .main-nav {
 	float: right;
+	display: -webkit-box;
+ 	display: -webkit-flex;
+ 	display: -ms-flexbox;
+	display: flex;
+    flex-wrap: wrap;
 		nav {
-			float: left;
+			//float: left;
 			margin-top: 1rem;
 		}
 		
@@ -42,9 +47,13 @@
 			list-style-type: none;
 			margin: 0;
 			padding: 0;
-
+			display: -webkit-box;
+ 			display: -webkit-flex;
+ 			display: -ms-flexbox;
+			display: flex;
+    		flex-wrap: wrap;
 				li {
-					float: left;
+					//float: left;
 					margin-right: 24px;
 						&:last-child {
 							margin-right: 0;
@@ -69,4 +78,59 @@
 
 .header_login.button_secondary {
 	margin: 0 0 0 1.2rem;
+	height: 65px;
 }
+
+
+@media screen and (max-width: 896px) {
+	.main-nav {
+		position: absolute;
+		-webkit-box-orient: vertical;  
+ 		-webkit-box-direction: reverse;  
+ 		-webkit-flex-direction: column-reverse;  
+     	-ms-flex-direction: column-reverse;
+		flex-direction: column-reverse;
+		width: 95%;
+		nav {
+			//align-self: flex-end;
+		}
+
+		ul {
+			justify-content: center;
+		}
+	}
+
+	.header_login.button_secondary {
+		-webkit-align-self: flex-end;
+     	-ms-flex-item-align: end;
+	    align-self: flex-end;
+	}
+
+}
+
+@media screen and (max-width: 895px) {
+	.header_login.button_secondary {
+    	height: 50px;
+  	}
+  	.main-nav { 
+		width: 92%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.logo {
+		float: left;
+		margin: 0 auto;
+		width: 150px;
+	}
+  	.header_login.button_secondary {
+    	height: 32px;
+  	}
+
+	.main-nav { 
+		ul {
+			@include font-size($xsmallb);		
+		}
+	}
+}
+
