@@ -44,7 +44,7 @@
 		margin: 0;
 		clear: both;
 		padding: 1.2rem 1rem;
-		@include font-size($xxxbig);
+		@include font-size($xbig);
 		line-height: 130%;
 		font-weight: 300;
 		color: #ffffff;
@@ -55,10 +55,11 @@
 	}
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 520px) {
 	.web-portals {
 		&_wrapper {
 			text-align: center;
+			padding: 7rem 1rem;
 		}
 
 		&_logos {
