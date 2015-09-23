@@ -37,7 +37,7 @@
 
 @media screen and (max-width: 480px) {
   .button_secondary {
-    @include font-size($xsmall);
+    @include font-size($xxsmall);
     padding: 0.15rem 0.35rem 0.15rem 0.35rem;
   }
 
@@ -47,7 +47,7 @@
   }
 
   .button_accent {
-    @include font-size($xsmall);
+    @include font-size($xxsmall);
     padding: 0.6rem;
   }
 }
