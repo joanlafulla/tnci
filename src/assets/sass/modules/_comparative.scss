@@ -67,5 +67,138 @@
 		font-size: 32px;
 	}
 
+	.table-container
+	{
+		width: 100%;
+		overflow-y: auto;
+		_overflow: auto;
+		margin: 0 0 1em;
+		//border: 1px solid red;
+	}
+
+	.table-container-outer { 
+		position: relative; 
+	}
+
+	// .table-container-fade
+	// {
+	// 	position: absolute;
+	// 	right: 0;
+	// 	width: 30px;
+	// 	height: 100%;
+	// 	background-image: -webkit-linear-gradient(0deg, rgba(255,255,255,.5), #fff);
+	// 	background-image: -moz-linear-gradient(0deg, rgba(255,255,255,.5), #fff);
+	// 	background-image: -ms-linear-gradient(0deg, rgba(255,255,255,.5), #fff);
+	// 	background-image: -o-linear-gradient(0deg, rgba(255,255,255,.5), #fff);
+	// 	background-image: linear-gradient(0deg, rgba(255,255,255,.5), #fff);
+	// }
+}
+@media screen and (max-width: 1024px) {
+	.comparative {
+		&-plus-header,
+		&-multi-header {
+			@include font-size($small);
+				span {
+					@include font-size($small);
+					padding: 1rem 0;
+				}
+		}
+
+		table {
+			padding: 0.5rem;
+			th {
+				border-left: 1rem solid #ffffff;
+				padding-left: 5px;
+    			padding-right: 5px;
+    			&:nth-child(n+2){
+    				@include font-size($xxsmall);	
+    				span {
+    					@include font-size($comparativesbig);
+    				}
+    			}
+			}
+		}
+	}
 }
 
+
+@media screen and (max-width: 640px) {
+	.comparative {
+		&-plus-header,
+		&-multi-header {
+			@include font-size($xxxsmall);
+				span {
+					@include font-size($xxxsmall);
+					padding: 1rem 0;
+				}
+		}
+
+		table {
+			padding: 0.5rem;
+			th {
+				border-left: 1rem solid #ffffff;
+				padding-left: 5px;
+    			padding-right: 5px;
+    			&:nth-child(n+2){
+    				@include font-size($comparativesmall);	
+    				span {
+    					@include font-size($xxsmall);
+    				}
+    			}
+			}
+
+			td {
+				padding: 0.5rem;
+				@include font-size($comparativesmall);
+			}
+		}
+
+		&-check {
+			width: 24px;
+			height: 24px;
+		}
+
+		&-none:before {
+			font-size: 24px;
+		}
+	}
+}
+
+
+@media screen and (max-width: 360px) {
+	.comparative {
+		&-plus-header,
+		&-multi-header {
+			@include font-size($xsmall);
+				span {
+					@include font-size($big);
+				}
+		}
+
+		table {
+			padding: 0.5rem;
+			th {
+    			&:nth-child(n+2){
+    				@include font-size($xsmall);	
+    				span {
+    					@include font-size($big);
+    				}
+    			}
+			}
+
+			td {
+				padding: 0.5rem;
+				@include font-size($xsmall);
+			}
+		}
+
+		&-check {
+			width: 18px;
+			height: 18px;
+		}
+
+		&-none:before {
+			font-size: 18px;
+		}
+	}
+}
