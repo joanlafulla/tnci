@@ -16,12 +16,19 @@
 
 			h1 {
 				@include font-size($herobig);
+				font-size: 4.2vw;
 				font-weight: 700;
 				color: #ffffff;
 				text-shadow: 4px 4px 4px rgba(0,0,0,.6);
-				line-height: 1em;
-				padding: 0 1.2rem;
-				margin: 1rem 0;
-			}
+				line-height: 1.2em;
+				transition: all .5s;
+			}	
+	}
+}
+
+@media screen and (max-width:800px) {
+	.hero_claim h1 {
+		@include font-size($hero);
+		font-size: 6vw;
 	}
 }
