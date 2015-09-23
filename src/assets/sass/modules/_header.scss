@@ -53,7 +53,6 @@
 			display: flex;
     		flex-wrap: wrap;
 				li {
-					//float: left;
 					margin-right: 24px;
 						&:last-child {
 							margin-right: 0;
@@ -124,13 +123,25 @@
 		width: 150px;
 	}
   	.header_login.button_secondary {
+    	height: 40px;
+  	}
+
+	.main-nav { 
+		ul {
+			@include font-size($smallb);		
+		}
+	}
+}
+
+@media screen and (max-width: 360px) {
+  
+  	.header_login.button_secondary {
     	height: 32px;
   	}
 
 	.main-nav { 
 		ul {
-			@include font-size($xsmallb);		
+			@include font-size($small);		
 		}
 	}
 }
-

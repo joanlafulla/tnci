@@ -41,7 +41,7 @@
 	.hero{
 		&_claim {
 				h1 {
-					@include font-size($herosmallc);
+					@include font-size($herosmalld);
 				}
 		}
 	}
@@ -51,21 +51,8 @@
 	.hero{
 		&_claim {
 				h1 {
-					@include font-size($herosmallc);
 					text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
 				}
-		}
-	}
-}
-
-@media screen and (max-width: 320px) {
-	.hero{
-		&_claim {
-				h1 {
-					@include font-size($herosmallb);
-					text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
-				}
-				top: 63%;
 		}
 	}
 }

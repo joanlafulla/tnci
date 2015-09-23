@@ -37,12 +37,13 @@
 
 @media screen and (max-width: 480px) {
   .button_secondary {
-    @include font-size($xxsmall);
+    @include font-size($xsmall);
     padding: 0.15rem 0.35rem 0.15rem 0.35rem;
   }
 
   .header_login.button_secondary {
-    height: 32px;
+    height: 28px;
+    padding-top: 6px;
   }
 
   .button_accent {

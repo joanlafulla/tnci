@@ -27,3 +27,9 @@ h2 {
 }
 
 
+@media screen and (max-width: 360px) {
+	$doc-font-size: 12px;
+	html {
+		font-size: 0px + $doc-font-size;
+	}
+}

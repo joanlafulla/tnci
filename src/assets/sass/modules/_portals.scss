@@ -54,3 +54,21 @@
 			}
 	}
 }
+
+@media screen and (max-width: 360px) {
+	.web-portals {
+		&_wrapper {
+			text-align: center;
+		}
+
+		&_logos {
+			//padding: 1rem;
+			li {
+				text-align: center;
+				float: none;
+				margin-right: 0px;
+				padding-bottom: 10px;
+			}
+		}
+	}
+}
