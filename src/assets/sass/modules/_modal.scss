@@ -1,0 +1,163 @@
+.modal {
+		position: fixed;
+		top:0; bottom:0; left: 0; right: 0;
+		background-color: rgba(0,0,0,.9);
+		z-index: 10;
+		display: none;
+		opacity: 0;
+		transition: .4s all ease-in;
+		padding: 1rem;
+
+			&-close {
+					position: absolute;
+					display: block;
+					top: 16px;
+					right: 16px;
+					height: 32px;
+					width: 32px;
+					text-decoration: none !important;
+					cursor: pointer;
+					text-align: center;
+					opacity: 1;
+
+						&:after {
+							content: "\00d7";
+						    font-size: 64px;
+						    color: #ccc;
+						    cursor: pointer;
+						    font-weight: 300;
+						}
+			}
+
+			&-form-wrapper {
+				max-width: 500px;
+				max-height: 85%;
+				overflow-y: auto;
+				padding: 1rem;
+				background-color: #f5f5f5;
+				margin: 0 auto;
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+
+					h1 {
+						font-weight: 300;
+						@include font-size($big);
+					}
+
+			}
+}
+
+@media screen and (max-width: 850px) {
+	.modal-form-wrapper {
+	    background-color: #f5f5f5;
+	    padding: 1rem;
+	    transform: none;
+	    top: 0;
+	    margin: 50px auto 0;
+	}
+}
+
+.imf-searcher_filter {
+	margin: 16px 0;
+	overflow: hidden;
+	position: relative;
+	background-color: #ffffff;
+
+		&.imf-searcher_filter--inline {
+			background-color: transparent;
+		}
+
+		label.lb-hide {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			color: #999;
+			padding: 16px 8px;
+			transition: 0.3s;
+			background-color: #fff;
+		}
+}
+
+.imf-searcher_button {
+	clear: both;
+	text-align: center;
+}
+
+.imf-label--required:before {
+	content: "*";
+	color: #f00;
+	font-size: 20px;
+	padding-right: 4px;
+	position: relative;
+	top: 4px;
+	line-height: 0;
+}
+
+.imf-col_label {
+	float: left;
+    margin-right: 2.5641%;
+    text-align: right;
+    width: 23.0769%;
+
+	label {
+		display: inline-block;
+		padding-top: 8px;
+	}
+}
+
+
+.imf-searcher_filter input[type="text"],
+.imf-searcher_filter textarea {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    left: 0;
+    padding: 18px 12px 28px;
+    position: relative;
+    top: 0;
+    z-index: 1;
+ 	border: 1px solid #eaeaea;
+    box-sizing: border-box;
+    color: #333333;
+    margin: 0;
+    outline: 0;
+    text-align: left;
+    vertical-align: middle;
+    width: 100%;
+    -webkit-appearance:none;
+}
+
+.imf-searcher_filter textarea {
+	background-color: #ffffff;
+}
+
+.imf-searcher_filter input[type="text"]:focus + label {
+    background-color: $orange;
+    color: #fff;
+    font-size: 9px;
+    margin-top: -22px;
+    padding: 0 6px;
+    text-transform: uppercase;
+    top: 100%;
+    z-index: 2;
+    line-height: 2.5;
+}
+
+.imf-searcher_filter label.lb-hide {
+    background-color: #fff;
+    bottom: 0;
+    color: #999;
+    left: 0;
+    padding: 16px 8px;
+    position: absolute;
+    top: 0;
+    transition: all 0.3s ease 0s;
+    width: 100%;
+    line-height: 2;
+}
+
+.imf-searcher_filter input[type="text"]:valid {
+    background: #fff none repeat scroll 0 0;
+}
+

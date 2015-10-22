@@ -26,10 +26,14 @@ h2 {
 	line-height: 130%;
 }
 
+.section {
+	margin: 4rem 0;
+}
 
-@media screen and (max-width: 360px) {
-	$doc-font-size: 12px;
-	html {
-		font-size: 0px + $doc-font-size;
-	}
+button {
+	    -webkit-appearance: button; /* for input */
+    -webkit-user-select: none; /* for button */
+       -moz-user-select: none;
+        -ms-user-select: none;
+        border: none;
 }

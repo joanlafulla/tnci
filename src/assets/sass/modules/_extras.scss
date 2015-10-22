@@ -1,0 +1,41 @@
+.extras {
+	@include container(full);
+
+	&-wrapper-webs,
+	&-wrapper-nextvisit {
+		width: 50%;
+		min-height: 530px;
+		position: relative;
+		overflow: hidden;
+	}
+
+	&-wrapper-webs {
+		float: left;
+		background-image:
+		-webkit-linear-gradient(rgba(11,62,34,0.8), rgba(11,62,34,0.8)), url("../img/webs_bg.jpg");
+		background-image:
+		-o-linear-gradient(rgba(11,62,34,0.8), rgba(11,62,34,0.8)), url("../img/webs_bg.jpg");
+		background-image:
+		linear-gradient(rgba(11,62,34,0.8), rgba(11,62,34,0.8)), url("../img/webs_bg.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+		position: relative;
+		display: block;
+	}
+
+	&-wrapper-nextvisit {
+		float: right;
+		background-image:
+		-webkit-linear-gradient(rgba(38,64,16,0.7), rgba(38,64,16,0.7)), url("../img/nextvisit_bg.jpg");
+		background-image:
+		-o-linear-gradient(rgba(38,64,16,0.7), rgba(38,64,16,0.7)), url("../img/nextvisit_bg.jpg");
+		background-image:
+		linear-gradient(rgba(38,64,16,0.7), rgba(38,64,16,0.7)), url("../img/nextvisit_bg.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+		position: relative;
+		display: block;
+	}
+}

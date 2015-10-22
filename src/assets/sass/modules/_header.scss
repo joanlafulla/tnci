@@ -11,12 +11,12 @@
 	min-height: 200px;
 	padding: 2rem 1.3rem 1.3rem;
 	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQ5NDk0OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM3ZGI5ZTgiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-	background: -moz-linear-gradient(top,  rgba(35,35,35,0.6) 0%, rgba(125,185,232,0) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgbargba(35,35,35,0.6)), color-stop(100%,rgba(125,185,232,0))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  rgbargba(35,35,35,0.6) 0%,rgba(125,185,232,0) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  rgba(35,35,35,0.6) 0%,rgba(125,185,232,0) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  rgba(35,35,35,0.6) 0%,rgba(125,185,232,0) 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  rgba(35,35,35,0.6) 0%,rgba(125,185,232,0) 100%); /* W3C */
+	background: -moz-linear-gradient(top,  rgba(35,35,35,0.5) 0%, rgba(35,35,35,0.2) 50%, rgba(35,35,35,0) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgbargba(35,35,35,0.6)), color-stop(50%,rgba(35,35,35,0.2)), color-stop(100%,rgba(35,35,35,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgbargba(35,35,35,0.5) 0%,rgba(35,35,35,0.2) 50%, rgba(35,35,35,0) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(35,35,35,0.5) 0%,rgba(35,35,35,0) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(35,35,35,0.5) 0%,rgba(35,35,35,0.2) 50%,rgba(35,35,35,0) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(35,35,35,0.5) 0%,rgba(35,35,35,0.2) 50%,rgba(35,35,35,0) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#494949', endColorstr='#007db9e8',GradientType=0 ); /* IE6-8 */	
 }
 
@@ -29,6 +29,7 @@
 	height: 39px;
 	float: left;
 	display: block;
+	margin-top: 8px;
 }
 
 .main-nav {
@@ -38,6 +39,14 @@
  	display: -ms-flexbox;
 	display: flex;
     flex-wrap: wrap;
+
+    	&-user-icon {
+			fill: #ffffff;
+			width: 24px;
+			height: 24px;
+			display: none;
+    	}
+
 		nav {
 			//float: left;
 			margin-top: 1rem;
@@ -75,73 +84,24 @@
 	float: right;
 }
 
-.header_login.button_secondary {
+.header_login.button_primary {
 	margin: 0 0 0 1.2rem;
-	height: 65px;
 }
 
-
-@media screen and (max-width: 896px) {
-	.main-nav {
-		position: absolute;
-		-webkit-box-orient: vertical;  
- 		-webkit-box-direction: reverse;  
- 		-webkit-flex-direction: column-reverse;  
-     	-ms-flex-direction: column-reverse;
-		flex-direction: column-reverse;
-		width: 95%;
-		nav {
-			//align-self: flex-end;
-		}
-
-		ul {
-			justify-content: center;
-		}
+@media screen and (max-width: 500px) {
+	.main-nav-user-icon {
+		display: block;
 	}
 
-	.header_login.button_secondary {
-		-webkit-align-self: flex-end;
-     	-ms-flex-item-align: end;
-	    align-self: flex-end;
+	.header_login span {
+		display: none;
 	}
 
-}
-
-@media screen and (max-width: 895px) {
-	.header_login.button_secondary {
-    	height: 50px;
-  	}
-  	.main-nav { 
-		width: 92%;
-	}
-}
-
-@media screen and (max-width: 480px) {
 	.logo {
-		float: left;
-		margin: 0 auto;
-		width: 150px;
-	}
-  	.header_login.button_secondary {
-    	height: 40px;
-  	}
-
-	.main-nav { 
-		ul {
-			@include font-size($xsmall);		
-		}
+		width: 200px;
+		margin-top: 16px;
 	}
 }
 
-@media screen and (max-width: 360px) {
-  
-  	.header_login.button_secondary {
-    	height: 32px;
-  	}
 
-	.main-nav { 
-		ul {
-			@include font-size($small);		
-		}
-	}
-}
+

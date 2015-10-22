@@ -1,21 +1,28 @@
 .hero {
-	background-image: url("../img/hero/bg_01.jpg");
+	background-image: url("../img/hero/bg_03.jpg");
 	background-repeat:no-repeat;
 	background-position: 50% center;
 	background-size: cover;
 	max-width: 100%;
 	transition: all 0.5s ease 0s;
 	position: relative;
+	display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
 
 	&_claim {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+		// position: absolute;
+		// top: 50%;
+		// left: 50%;
+		// transform: translate(-50%, -50%);
+		margin: auto;
 		text-align: center;
+		z-index: 2;
 
 			h1 {
 				@include font-size($herobig);
+				font-size: 4vw;
 				font-weight: 700;
 				color: #ffffff;
 				text-shadow: 4px 4px 4px rgba(0,0,0,.6);
@@ -26,22 +33,45 @@
 	}
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 801px) {
+        .hero {
+            background-image: url("../img/hero/bg_v01_medium.jpg");
+        }
+    }
+
+    @media screen and (max-width: 481px) {
+        .hero {
+            background-image: url("../img/hero/bg_v01_small.jpg");
+        }
+    }
+
+@media screen and (max-width: 1180px) {
 	.hero{
 		&_claim {
 				h1 {
 					@include font-size($heromedium);
+					font-size: 5vw;
 				}
 		}
 	}
 }
 
-
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
 	.hero{
 		&_claim {
 				h1 {
-					@include font-size($herosmalld);
+					@include font-size($heromedium);
+					font-size: 6vw;
+				}
+		}
+	}
+}
+
+@media screen and (max-width: 520px) {
+	.hero{
+		&_claim {
+				h1 {
+					font-size: 8vw;
 				}
 		}
 	}

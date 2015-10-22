@@ -1,0 +1,173 @@
+.footer {
+
+	&-wrapper {
+		@include container(full);
+		background-color: $base;
+		margin-top: 0 !important;
+		padding: 4em 0;
+		padding: 4rem 0;
+	}
+
+	&-content {
+		@include container(1280px);
+		color: #999999;
+		padding: 1rem;
+			div {
+				float: left; 
+				width: 32.26%;
+				margin-right: 1.6%;
+			}
+
+			div:nth-child(3) {
+				float: right;
+				width: 32.26%;
+				margin-right: 0;
+			}
+
+			a {
+				color: #999999;
+				text-decoration: none;
+
+					&:hover {
+						color: #cccccc;
+						text-decoration: underline;
+					}
+			}
+	}
+
+	&-logo {
+		display: block;
+		width: 220px;
+		text-indent: -9999px;
+		background-image: url("../img/logo.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 32px;
+	}
+
+	&-links {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+
+			li {
+				padding: .5rem;
+			}
+	}
+
+
+	&-corporate {
+		@include container (1280px);
+		margin: 2rem auto 0;
+		text-align: center;
+
+			&-portals {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				color: #999999;
+
+					li {
+						float: left;
+						padding: .5rem 1rem;
+						position: relative;
+
+							a,
+							a:visited {
+								color: #999999;
+								text-decoration: none;
+							}
+
+							a:hover {
+								text-decoration: underline;
+								color: #cccccc;
+							}
+
+							&:after {
+								content:"|";
+								position: absolute;
+								right: 0;
+							}
+
+							&:last-child:after,
+							&:first-child:after {
+								content:"";
+							}
+					}
+			}
+
+			&-portals-logo {
+				display: inline;
+		    	vertical-align: middle;
+		    	width: 15px;
+			}
+	}
+
+	&-legal {
+		@include container (1280px);
+		margin: 0 auto;
+		text-align: center;
+
+			&-items {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				color: #999999;
+
+					li {
+						float: left;
+						padding: .5rem 1rem;
+						position: relative;
+
+							a,
+							a:visited {
+								color: #999999;
+								text-decoration: none;
+							}
+
+							a:hover {
+								text-decoration: underline;
+							}
+
+							&:after {
+								content:"|";
+								position: absolute;
+								right: 0;
+							}
+
+							&:last-child:after,
+							&:first-child:after {
+								content:"";
+							}
+					}
+			}
+	}
+}
+
+@media screen and (max-width: 770px) {
+	.footer {
+		text-align: center;
+
+		&-logo {
+			margin: 0 auto;
+		}
+
+		&-content {
+			div,
+			div:nth-child(3) {
+				float: none; 
+				width: 100%;
+				margin-right: 0;
+			}
+		}
+
+		&-links {
+
+			li {
+				padding: .5rem 0;	
+			}	
+		}
+	}
+}

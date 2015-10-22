@@ -1,6 +1,5 @@
 .comparative {
 	@include container(1200px);
-	padding: 4rem 1rem;
 
 	h2 {
 			text-align: center;
@@ -9,11 +8,11 @@
 	table {
 		border-collapse: collapse;
     	border-spacing: 0;
+    	margin-top: 2rem;
     	width: 100%;
-    	margin-top: 5rem;
 
     		th {
-    			border-left: 2rem solid #ffffff;
+    			 word-wrap: break-word;
     		}
 
 
@@ -21,6 +20,7 @@
     			padding: 1.2rem;
     			font-weight: 300;
     			text-align: center;
+			 	word-wrap: break-word;
     			
 
     				&:first-child {
@@ -31,35 +31,53 @@
     		tbody tr:nth-child(2n+1) {
     			background-color: $grey;
     		}
+
+    		tbody tr.comparative-row-buttons {
+    			background-color: transparent;
+    		}
 	}
 
 	&-plus-header,
 	&-multi-header {
 		@include font-size($big);
 		font-weight: 300;
-		padding: .5rem 0;
+		padding: .5em;
 
 			span {
-				@include font-size($xxxbig);
+				@include font-size($big);
 				display: block;
 				padding: 1rem 0;
 			}
 	}
 
 	&-plus-header {
-		background-color: $orange;
-		color: #ffffff;
+		color: $orange;
+		border-left: 1px solid $orange;
+		border-right: 1px solid $orange;
+		border-top: 4px solid $orange;
 	}
 
 	&-multi-header {
-		background-color: $grey;
+		color: #6c92b5;
+		border-left: 1px solid #6c92b5;
+		border-right: 1px solid #6c92b5;
+		border-top: 4px solid #6c92b5;
+	}
+
+	&-plus-column {
+		border-left: 1px solid $orange;
+		border-right: 1px solid $orange;
+
+		&--last {
+			border-bottom: 1px solid $orange;
+		}
 	}
 
 	&-check {
 		width: 32px;
 		height: 32px;
 		vertical-align: middle;
-		fill: #ffcc00;
+		fill: #666666;
 	}
 
 	&-none:before {
@@ -70,135 +88,91 @@
 	.table-container
 	{
 		width: 100%;
-		overflow-y: auto;
-		_overflow: auto;
-		margin: 0 0 1em;
-		//border: 1px solid red;
 	}
 
 	.table-container-outer { 
 		position: relative; 
 	}
 
-	// .table-container-fade
-	// {
-	// 	position: absolute;
-	// 	right: 0;
-	// 	width: 30px;
-	// 	height: 100%;
-	// 	background-image: -webkit-linear-gradient(0deg, rgba(255,255,255,.5), #fff);
-	// 	background-image: -moz-linear-gradient(0deg, rgba(255,255,255,.5), #fff);
-	// 	background-image: -ms-linear-gradient(0deg, rgba(255,255,255,.5), #fff);
-	// 	background-image: -o-linear-gradient(0deg, rgba(255,255,255,.5), #fff);
-	// 	background-image: linear-gradient(0deg, rgba(255,255,255,.5), #fff);
-	// }
-}
-@media screen and (max-width: 1024px) {
-	.comparative {
-		&-plus-header,
-		&-multi-header {
-			@include font-size($small);
-				span {
-					@include font-size($small);
-					padding: 1rem 0;
-				}
-		}
-
-		table {
-			padding: 0.5rem;
-			th {
-				border-left: 1rem solid #ffffff;
-				padding-left: 5px;
-    			padding-right: 5px;
-    			&:nth-child(n+2){
-    				@include font-size($xxsmall);	
-    				span {
-    					@include font-size($comparativesbig);
-    				}
-    			}
-			}
-		}
+	table tbody tr.comparative-row-buttons--rwd {
+		display: none;
+		background-color: transparent !important;
 	}
 }
 
-
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 800px) {
 	.comparative {
-		&-plus-header,
-		&-multi-header {
-			@include font-size($xxxsmall);
-				span {
-					@include font-size($xxxsmall);
-					padding: 1rem 0;
-				}
-		}
-
 		table {
-			padding: 0.5rem;
-			th {
-				border-left: 1rem solid #ffffff;
-				padding-left: 5px;
-    			padding-right: 5px;
-    			&:nth-child(n+2){
-    				@include font-size($comparativesmall);	
-    				span {
-    					@include font-size($xxsmall);
-    				}
-    			}
+			border-collapse: separate;
+    	border-spacing: 2px;
+			@include font-size($xxsmall);
+			td:first-child {
+    					text-align: center;
+    					padding: 8px;
 			}
 
-			td {
-				padding: 0.5rem;
-				@include font-size($comparativesmall);
-			}
+			tr {
+			    display: flex;
+			    flex-flow: row wrap;
+			    justify-content: space-around;
+		  	}
+
+		  	td,
+		  	th {
+			    display: block;
+			    width: 50%;
+			    font-size: 20px;
+		  	}
+
+		  	tbody tr:nth-child(2n+1) {
+    			background-color: transparent;
+    		}
+
+  			th:first-child,
+  			td:first-child {
+    			background: #efefef;
+    			padding: 16px 0;
+    			width: 100%;
+  			}
+
+  			th:nth-child(2),
+  			td:nth-child(2) {
+  				border-right: 1px solid #efefef;
+  			}
+
+  			th:first-child {
+    		display: none;
+  			}
+
 		}
 
-		&-check {
-			width: 24px;
-			height: 24px;
+		&-multi-header,
+		&-plus-header {
+			border-left: none;
+			border-right: none;
 		}
 
-		&-none:before {
-			font-size: 24px;
+		&-plus-column {
+			border: 0;
 		}
 	}
+
+	 .col-no-content {
+	 	display: none !important;
+	 }
+
+	 .table-button-erase {
+	 	display: none !important;
+	 }
+
+	 .comparative table tbody tr.comparative-row-buttons {
+	 	display: none;
+	 }
+
+	 .comparative table tbody tr.comparative-row-buttons--rwd {
+	 	display: block;
+	 }
 }
 
 
-@media screen and (max-width: 360px) {
-	.comparative {
-		&-plus-header,
-		&-multi-header {
-			@include font-size($xsmall);
-				span {
-					@include font-size($big);
-				}
-		}
 
-		table {
-			padding: 0.5rem;
-			th {
-    			&:nth-child(n+2){
-    				@include font-size($xsmall);	
-    				span {
-    					@include font-size($big);
-    				}
-    			}
-			}
-
-			td {
-				padding: 0.5rem;
-				@include font-size($xsmall);
-			}
-		}
-
-		&-check {
-			width: 18px;
-			height: 18px;
-		}
-
-		&-none:before {
-			font-size: 18px;
-		}
-	}
-}

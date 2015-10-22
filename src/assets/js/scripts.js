@@ -75,7 +75,7 @@ var ScrollAnimation = function () {
 		self.check_if_in_view();
 	};
 	this.myWindow = $(window);
-	this.myAnimation_elements = $('.testimony_item');
+	this.myAnimation_elements = $('.testimony_item, .recomended');
 
 	this.check_if_in_view = function() {
 	  	var window_height = this.myWindow.height();
@@ -102,6 +102,25 @@ $(window).on("scroll resize", function (){
  		myScrollAnimation.init();
 });
 $(window).trigger('scroll');
+
+// *********************************************  //
+// UP //
+// *********************************************  //
+    function smk_jump_to_it( _selector, _speed ){
+        _speed = parseInt(_speed, 10) === _speed ? _speed : 300;
+        $( _selector ).on('click', function(event){
+            event.preventDefault();
+            var url = $(this).attr('href'); //cache the url.
+ 
+            // Animate the jump
+            $("html, body").animate({ 
+                scrollTop: parseInt( $(url).offset().top ) - 50
+            }, _speed);
+        });
+    }
+
+    smk_jump_to_it( '.up_link', 500);
+
 });
 
 // *********************************************  //
@@ -133,3 +152,51 @@ var SedondaryNav = function() {
 
 var secondaryNav = new SedondaryNav();
 secondaryNav.init();
+
+$("[data-more]").on("click", function(e){
+	e.preventDefault();
+	var target = $(this).data("more");
+	var target_item = $("[data-more-item='" + target + "']");
+	var target_item_class = $(this).data("animation");
+	var target_add_data = target_item.attr("data-direction", target_item_class);
+	target_item.addClass(target_item_class);
+	function be_visible() {
+		target_item.find("div").addClass("be-visible");
+		target_item.find(".products-content-more-close").addClass("be-visible");
+		target_item.find("#badgetCRM").addClass("be-visible");
+	}
+	setTimeout(be_visible, 550);
+	
+});
+
+$(".products-content-more-close").on("click", function(e) {
+	e.preventDefault();
+	var target = $(this).closest("div");
+	var class_to_remove = target.data("direction");
+	$(this).next().removeClass("be-visible");
+	$(this).removeClass("be-visible");
+	$("#badgetCRM").removeClass("be-visible");
+	function closePanel () {
+		target.removeClass(class_to_remove);	
+	}
+	setTimeout(closePanel, 250);
+});
+
+$("[data-link]").on("click", function(e){
+	e.preventDefault();
+	var modalTarget = $(this).attr("data-link");
+	var modal = $("#" + modalTarget);
+	modal.toggleClass("be-visible");
+	console.log(modal);
+});
+
+$("[data-close]").on("click", function(e){
+	e.preventDefault();
+	var modalCloseTarget = $(this).attr("data-close");
+	var modalClose = $("#" + modalCloseTarget);
+	modalClose.toggleClass("be-visible");
+	console.log(modalClose);
+});
+
+
+

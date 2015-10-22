@@ -6,11 +6,9 @@ $susy: (
 
 //Text Sizes
 
-$doc-font-size: 18;
+$doc-font-size: 16;
 
-//$bigb: 18;
 $big: 20;
-//$bigb: 22;
 $xbig: 24;
 $xxbig: 32;
 $xxxbig: 40;
@@ -19,12 +17,8 @@ $small: 16;
 $xsmall: 15;
 $xxsmall: 14;
 $xxxsmall: 12;
-//$xsmallb: 12;
-//$xxsmall: 10;
 
-//$herosmall: 25;
 $herosmallb: 24;
-//$herosmallc: 32;
 $herosmalld: 36;
 $heromedium: 48;
 $herobig: 80;
@@ -37,9 +31,9 @@ $comparativesbig: 26;
 //Colors
 
 $base: #333333;
-$blue: #3498db;
+$blue: #2698ff;
 $grey: #f5f5f5;
-$orange: #ff9900;
+$orange: #d07214;
 
 
 @mixin font-size($size) {
@@ -59,4 +53,28 @@ $orange: #ff9900;
     &:after {
         clear: both;
     }
+}
+
+.badget-wrapper {
+  width: 102px;
+  height: 102px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.badget {
+  color: #ffffff;
+  text-align: center;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform:    rotate(-45deg);
+  -ms-transform:     rotate(-45deg);
+  -o-transform:      rotate(-45deg);
+  position: relative;
+  padding: 8px;
+  left: -40px;
+  top: 18px;
+  width: 145px;
+  background-color: $orange;
 }

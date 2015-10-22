@@ -7,6 +7,7 @@
   margin: 1rem 0;
   display: inline-block;
   text-transform: uppercase;
+  transition: all .3s;
 
     &:hover {
       text-decoration: none;
@@ -15,16 +16,19 @@
 }
 
 .button_accent {
-  @include button (#ffffff, $blue, $blue, 1.2rem); 
+  @include button (#ffffff, $blue, $blue, 1.5rem);
+  @include font-size(24);
 }
 
 .button_primary {
-  @include button (#ffffff, $blue, $blue, 1rem); 
+  @include button (#ffffff, $blue, $blue, 1rem);
 }
 
 .button_secondary {
-  @include button ($blue, #ffffff, #ffffff, 1rem);
-  border: 1px solid $blue;
+  @include button (#ffffff !important, #8c8c8c, lighten(#8c8c8c, 6%), 1rem);
+    &:hover {
+      text-decoration: none !important;
+    }
 }
 
 @media screen and (max-width: 896px) {
@@ -34,20 +38,9 @@
   }
 }
 
-
-@media screen and (max-width: 480px) {
-  .button_secondary {
-    @include font-size($xxsmall);
-    padding: 0.15rem 0.35rem 0.15rem 0.35rem;
-  }
-
-  .header_login.button_secondary {
-    height: 28px;
-    padding-top: 6px;
-  }
-
-  .button_accent {
-    @include font-size($xxsmall);
-    padding: 0.6rem;
+@media screen and (max-width: 600px) {
+  .hero_claim .button_accent {
+    font-size: 1rem;
+    padding: 1rem;
   }
 }
